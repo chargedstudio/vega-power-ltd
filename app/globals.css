@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #0B0F1A;
+  color: #F5F7FB;
+  overflow-x: hidden;
+}
+
+/* The recurring Vega "slat" — a skewed parallelogram bar */
+.slat {
+  transform: skewX(-18deg);
+}
+
+/* Fine grid / blueprint texture used behind technical sections */
+.blueprint {
+  background-image:
+    linear-gradient(to right, rgba(174, 182, 196, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(174, 182, 196, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Subtle radial glow used behind the hero / CTA */
+.glow {
+  background:
+    radial-gradient(60% 60% at 70% 20%, rgba(61, 110, 245, 0.16), transparent 70%),
+    radial-gradient(50% 50% at 15% 90%, rgba(61, 110, 245, 0.08), transparent 70%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom range slider — themed to the brand */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: #1E2740;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #3D6EF5;
+  border: 3px solid #0B0F1A;
+  box-shadow: 0 0 0 1px #3D6EF5, 0 4px 14px rgba(61, 110, 245, 0.5);
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+input[type="range"]::-webkit-slider-thumb:active { transform: scale(1.12); }
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #3D6EF5;
+  border: 3px solid #0B0F1A;
+  box-shadow: 0 0 0 1px #3D6EF5, 0 4px 14px rgba(61, 110, 245, 0.5);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
